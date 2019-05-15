@@ -1,0 +1,7 @@
+import time
+a = type(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(1347517370))) # 2012-09-13 06:22:50
+
+from datetime import datetime, timedelta
+d = datetime.today()  # today as a datetime object
+yd = d - timedelta(days=1)  # subtract 1 day
+print(d)  # date and time are printed

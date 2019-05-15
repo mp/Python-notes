@@ -1,0 +1,6 @@
+try:
+  f = open('no_file', r)
+  for l in f:
+    print("l")
+except:
+    print("something went wrong")

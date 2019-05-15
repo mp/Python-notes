@@ -1,0 +1,15 @@
+binary_number = "{0:b}".format(37)	# convert number to binary and print consecutive "1"s				
+
+max = 0
+counter = 0
+
+
+for c in str(binary_number):
+    if c == "1":
+        counter += 1
+        if counter > max:
+            max = counter
+    else:
+        counter = 0
+
+print(max)

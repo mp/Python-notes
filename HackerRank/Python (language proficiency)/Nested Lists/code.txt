@@ -1,0 +1,25 @@
+if __name__ == '__main__':
+    students = []
+    grades = []
+
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        students.append([name, score])
+        grades.append(score)
+           
+    grades.sort()
+    grades_unique = list(sorted(set(grades)))
+    # print(grades_unique[1])
+
+    matches = []
+
+    for student in students:
+        # print(student[1], grades_unique[1])
+        if student[1] == grades_unique[1]:
+            matches.append(student[0])
+        
+    alphabetised_matches = sorted(matches)
+
+    for name in (alphabetised_matches):
+        print(name)

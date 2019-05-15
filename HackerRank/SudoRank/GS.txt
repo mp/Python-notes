@@ -1,0 +1,19 @@
+SudoRank
+
+short TLS session captured to /var/tmp/req.dump
+
+using the tools of your choice find out the following:
+
+DNS entries the server's certificate are valid for
+last date before the certificate expires in YYYY-MM-DD for
+The last 3 characters of the certificate's PEM encoded format
+
+write the results to /var/tmp/results, using the format:
+
+dnsnames: name1,name2,name3...
+lastdate:YYY-MM-DD
+lastchars: xyz
+
+ssh ubuntu@-
+# 72uhuie
+

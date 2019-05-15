@@ -1,0 +1,40 @@
+# writing to a file
+file = open('myfile.txt','w') 	# (w)rite (clears file like >)
+file.write('line 1\n') 		# write only takes a string, cast as str(int)
+file.write('line 2\n') 		# or do ('%d %g %s' %(int, float, string))
+file.close() 
+
+# read whole file
+file = open('myfile.txt', 'r')  # (r)ead, (w)rite (clears file like >), (a)ppend
+print(file.read())   # prints the whole file. read(n) reads n characters
+file.close() 
+
+# read a single line
+file = open('myfile.txt', 'r')  
+print(file.readline()) # prints first line. readline(n) reads n characters
+file.close() 
+
+# iteratively read a whole file line by line
+file = open('myfile.txt', 'r')  
+for line in file:                # line is a str
+  print(line.strip())            # prints the whole file like file.read()
+file.close() 
+
+# grep a regular expression:
+# if myfile.txt contains an expression, write out entire file
+with open('myfile.txt') as f1, open('outfile.txt', 'w') as f2:
+    data = f1.read()
+    match = re.search(r'l.*2', data, re.DOTALL)
+    print(match)
+    if match:
+        f2.write(match.group())
+
+# Grep a single letter: avoid!
+def grep_letter(line):
+  # print(line)
+  for letter in line:
+    # print(letter)
+    if letter == '2':
+      return True
+  return False
+

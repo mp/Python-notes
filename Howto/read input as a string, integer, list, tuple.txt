@@ -1,0 +1,25 @@
+t1 = tuple(input())		# input "1 2" gives tuple ('1',' ', '2')
+t2 = tuple(input().split())	# input "1 2" gives tuple ('1','2')
+t3 = tuple(input().split('!'))	# input "1!2" gives tuple ('1','2')
+print(t1,t2,t3)
+
+l1 = list(input())  # input "1 2" gives list ['1', '2']
+print(l1)
+
+s1 = str(input())
+s2 = str(input("what is your name?"))	# print a message
+print (s1, s2)
+
+n = int(input())				# input integer
+print(n)
+
+
+
+-------
+HackerRank specific: read all lines until EOF
+
+for input_line in sys.stdin:
+	print(input_line)
+-------
+
+x, y, z = (int(input()) for _ in range(3))	# short-hand

@@ -1,0 +1,77 @@
+create
+list(range(5))	# [0,1,2,3,4]
+
+list(range(1, 10, 2))	# start (1), end limit (10), step 2
+
+repeat
+[0] * 5 	# [0,0,0,0,0]
+[1,2,3] * 2	# [1,2,3,1,2,3]
+
+for e in nums:
+  		# print every element
+	print(e)
+
+for i in range(len(nums)):
+	# print every element
+	print(nums[i])
+
+search = "V"
+list = ["a", "b", "v"]
+
+in / not in operators
+
+if search in list:
+	print True 
+
+if search not in list:
+	print True
+
+>>> 15 in [3,5,2,4,1]
+False
+>>> 3 in [3,5,2,4,1]
+True
+
+list.append()
+list.insert(int position, value)
+list.sort()
+list.remove(item) OR del list[index]		
+list.reverse()		# modifies the original list and returns none, so cannot use inline.
+			# alternatively use mylist[::-1] to reverse a copy (more itensive)
+min(list), max(list)
+l[0]			# print first element (string indexing.txt for more)	
+
+Square all the items in a list:
+items = [1, 2, 3, 4, 5]
+squared = []
+for i in items:
+    squared.append(i**2)
+
+Map version:
+items = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x**2, items))
+
+
+Filter a range:
+number_list = range(-5, 5)
+less_than_zero = list(filter(lambda x: x < 0, number_list))
+print(less_than_zero)
+
+
+Reduce (rolling sum on list)
+product = 1
+list = [1, 2, 3, 4]
+for num in list:
+    product = product * num
+
+# product = 24
+
+from functools import reduce
+product = reduce((lambda x, y: x * y), [1, 2, 3, 4])
+
+# Output: 24
+
+Unique (remove duplicates) requires converting it to a set
+mylist = list(sorted(set(mylist)))	# sorted is optional
+
+sort a list:
+sorted(myList)		# works on any interable

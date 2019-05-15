@@ -1,0 +1,29 @@
+### 4 ways to run a shell command. Shell is not recommended (preferred order).
+### (CAM Perl lecturer said use shell = true in Python so you can just put the whole command as in Bash.)
+# subprocess.run (not documented) for is preferred way, but if it is not available use Popen
+
+completed = subprocess.Popen('ls -l /tmp/', shell=True)
+print(completed)
+
+# save output to string
+dir = subprocess.Popen("ls %s/%s | grep -Eo '201[78][0-9]{4}' | sort -r | head -n1" %(TMPDIR,SOURCEDIR), shell=True, stdout=subprocess.PIPE).communicate()[0].decode('utf-8')[:-1]  # alternatively, .rstrip('\r\n')
+print(RAWDIR)
+
+# As above but without linebreaks
+completed = subprocess.check_output('ls -l /tmp/', shell=True)
+print(completed)
+
+# Pythonistic format (preferred to using shell=True which is insecure)
+completed = subprocess.call(['ls', '-l'])
+print(completed)
+
+# Non shell version
+
+import subprocess
+o = subprocess.check_output(['bash', '-c', "df | grep 01"])
+
+import subprocess
+for run in range(100):
+        previous = subprocess.check_output(['bash', '-c', "df | grep 01 | grep 9\.\% ; sleep 60s"])
+        if previous == subprocess.check_output(['bash', '-c', "df | grep 01"]):
+                exit()

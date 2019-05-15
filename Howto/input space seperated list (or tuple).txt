@@ -1,0 +1,14 @@
+# input is space seperated int or str items (e.g. 1 2 3 4 5)
+
+integer_list = map(int, input().split())
+
+# type(integer_list) 	# this is a map object
+# print(integer_list)	# prints a map reference
+
+# convert map object to a list or tuple
+t = list(integer_list)
+t = tuple(integer_list)
+print(t)
+
+# convert every string in a list to an int
+l = [int(x) for x in l]

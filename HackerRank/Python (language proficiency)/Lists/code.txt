@@ -1,0 +1,31 @@
+if __name__ == '__main__':
+    N = int(input())
+    L = []    
+    for i in range(N):
+        c = []
+        c = str(input()).split()
+        command = c[0]
+        args = c[1:]
+        args = [int(x) for x in args]
+    
+        if command == 'insert':
+            L.insert(args[0],args[1])
+
+        if command == 'print':
+            print(L)
+        
+        if command == 'remove':
+            if args[0] in L:
+                L.remove(args[0])
+            
+        if command == 'append':
+            L.append(args[0])
+        
+        if command == 'sort':
+            L.sort()
+        
+        if command == 'reverse':
+            L.reverse()
+
+        if command == 'pop':
+            L.pop()

@@ -1,0 +1,107 @@
+
+  
+phonebook = {'Chris':111 , 'Fred':222, 'Andrew':333}
+phonebook["Tammy"] = 333	# Add
+
+#print(phonebook['Chris'])
+
+phonebook['Chris'] = "555-111"
+print(phonebook['Chris'])
+
+if 'Chris' in phonebook:        # works for key search only
+  print("num:", phonebook['Chris'])
+                                # how to look up item(s) with same value
+                                # search for the value to retrieve key (1 match)
+for key in phonebook:
+  print(key, phonebook[key])	# print whole phonebook
+
+print(list(phonebook.keys())[list(phonebook.values()).index(222)]) # Prints 'Fred'
+
+---
+phonebook = {'Chris':111 , 'Fred':222, 'Andrew':333, "Tammy":222}
+print(phonebook['Andrew'])
+
+def checkDict(name):      # check if name is in phone book
+  if (name in phonebook):
+    # print(name + '\'s number is', str(phonebook[name]))
+	  desc_str = "%s\'s number is %s" % (name, phonebook[name])
+	  return(desc_str)
+    
+print(checkDict('Chris'))        # print Chris's value (needs print)
+
+for name in phonebook:    # print each value in phonebook
+	print(checkDict(name))
+
+print(phonebook.items())	# debug
+print(phonebook.keys())
+print(phonebook.values())
+---
+
+
+# search for the value to retrieve multiple keys
+same_vals = []
+for e_key in phonebook:
+  if phonebook[e_key] == 222:
+      # same_vals.append(phonebook[e_key])
+      same_vals.append(e_key)
+print(same_vals, "have number 222")
+
+---
+# dictionary of single key with multiple values as a list
+
+sources={'dir1':['item1'],'dir2':['item1','item2'],'dir3':['item1','item2']}
+
+del phonebook['Chris']
+# update, add, delete items: https://www.programiz.com/python-programming/dictionary#change
+
+# test_scores = {}  # creates an empty dictionary
+test_scores = {'Kayla':[88,82,100], 'Luis':[65,33,50], 'Sophie':[99,100,77], 'Ethan':[73, 80, 56]}
+
+test_scores['Kayla'] += [101]	# Add element to a list value
+
+print(test_scores['Kayla'])	# [88, 82, 100, 101]
+
+for key in phonebook:
+  print(key, phonebook[key], "!")
+  
+print(phonebook.items())
+print(phonebook.keys())
+print(phonebook.values())
+  
+phonebook = {}  # creates an empty dictionary
+
+
+# 1. show maximum mark (show key and index)
+mydict = {'A':4,'B':10,'C':0,'D':87}
+maximum = max(mydict, key=mydict.get)  # Just use 'min' instead of 'max' for minimum.
+print(maximum, mydict[maximum])
+# D 87
+
+# 2. Print second highest and third highest mark (max() only prints highest. For others, put them into a sorted list)
+mydict_sorted = sorted(mydict.items(),key=(lambda i: i[1]))
+print(mydict_sorted[-2][0]) 	# B (2nd highest)
+print(mydict_sorted[-3][0]) 	# A (3rd highest)
+
+# 3. sort in maximum mark order (show top 10)
+names = {'name1': 34, 'name2':45, 'name3': 98, 'name4':34, 'name5': 66}
+sorted_names = sorted(names.items(), key=lambda kv: (-kv[1], kv[0]))[:10]	# list of sorted names
+# Then print as required:
+for name, score in sorted_names:
+	print(name, score)
+
+SO Fixes (2.7 -> 3):
+# Two Fixes for Python 3 from SO examples{ # sorted_names = sorted(names.iteritems(), key=lambda (k, v): (-v, k))[:10]	# list of sorted names
+1. dict.iteritems -> dict.items 2. lambda (k, v): (-v, k) -> lambda kv: (-kv[1], kv[0])
+
+
+# dictionary of single key with multiple values as a list
+sources={'dir1':['item1'],'dir2':['item1','item2'],'dir3':['item1','item2']}
+
+# move items into directory
+
+for key in sources:
+        SOURCEDIR = key
+        for value in sources[key]:
+                FILE = value
+                subprocess.Popen('mv %s* %s/ 2>/dev/null' %(FILE, SOURCEDIR), shell=True)
+

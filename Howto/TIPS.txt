@@ -1,0 +1,22 @@
+If stuck, write a plan of approach on paper (e.g. a family hierachy chart, Pearson p.91). Then write up in coder pad.
+
+Consider writing the example as an an arithmetic expression, then as f = x / y, then fill it out with names.
+
+def main():
+
+
+main()
+
+
+Don't try to declare empty variables (often suggested in C).
+
+Relax and read the text. That 60-180 seconds of making notes and relaxing. It will be deliberately confusing.
+
+Discuss O.
+Write out code? 
+Take 10 secs to consider what you will say (I have an example)
+
+Don't try to declare empty variables (often suggested in C).
+
+They know the full answer, and they expect you to reach it.
+Comment and document aggresively.  "If you’re not able to finish the problem, or even if you do, having thorough documentation on your approach may mean the difference between advancing to the next round or not."

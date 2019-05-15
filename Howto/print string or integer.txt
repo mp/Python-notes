@@ -1,0 +1,18 @@
+print(n)				# print integer
+print("Hello,", name + "!")	 	# , adds a space
+print("Hello,", name, "!", sep="")	# removes space
+print("Hello," + name + str(a) + "!")	# best way, mixes integers and strings
+
+print("Hello %s" %name)			# %s for strings, %d for integers
+print("Hello %s %d %g" %(string, int, float)) # if there are multiple to print use a tuple
+
+years = int(input())
+product_value = float(input())		# a.k.a double
+
+# 2 decimal places (integer or float)
+product_value = 100.00
+print("%.2f" %(years))				# format returns a string to 2 decimal places (e.g. money)
+print('The cost is £%.2f' % (product_value))	# works on an integer or float
+
+int(round(x))				# round a float
+

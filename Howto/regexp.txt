@@ -1,0 +1,29 @@
+import re
+
+s = "my name is Alex and you're Alex too"
+
+match = re.search(r'my.*?Alex', s).group()   # match = "my name is Alex"
+if match:
+  print(match)    # "my name is Alex"
+
+match_greedy = re.search(r'my.*Alex', s).group() 	# Without ?
+if match:
+  print(match)    # "my name is Alex"			"my name is Alex and you're Alex"
+
+# Add matches to a list
+list1 = []	# Match chosen words
+list2 = []	# Match numbers
+list1.append(re.search(r'Hello', s).group()) 
+list1.append(re.search(r'Alex', s).group())
+list2.append(re.search(r'18', s).group())
+
+# Add matches to a dictionary
+d = {'capitals':[], 'numbers':[]}	
+d['capitals'].append(re.search(r'Hello', s).group())
+d['capitals'].append(re.search(r'Alex', s).group())
+d['numbers'].append(re.search(r'18', s).group())	# {'capitals': ['Hello', 'Alex'], 'numbers': ['18']}
+
+# regexp examples
+r'\d{2}:\d{2}:\d{2}'		# 01:23:45	\d{2} is easier to use that [0-9]{2}
+
+

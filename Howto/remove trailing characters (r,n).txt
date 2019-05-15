@@ -1,0 +1,2 @@
+.strip()			# defaults to whitespace and \r,\n
+or .rstrip('\n')

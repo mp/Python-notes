@@ -1,0 +1,34 @@
+#!/bin/python3
+
+import sys
+
+N = int(input().strip())
+
+def checkRange2to5(N):
+    if 2 <= N <= 5:
+        return True
+    
+def checkRange6to20(N):
+    if 6 <= N <= 20:
+        return True
+
+def checkRange20plus(N):
+    if N > 20:
+        return True
+
+def checkEvenNumber(N):
+    if (N % 2) == 0:
+        # even
+        return True
+    else:
+        # false
+        return False
+
+if (checkEvenNumber(N) == False):
+    print("Weird")
+elif (checkEvenNumber(N) and checkRange2to5(N)):
+    print("Not Weird")
+elif (checkEvenNumber(N) and checkRange6to20(N)):
+    print("Weird")   
+elif (checkEvenNumber(N) and checkRange20plus(N)):
+    print("Not Weird")

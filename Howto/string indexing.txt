@@ -1,0 +1,21 @@
+n = int(input())
+
+print(str(n)[1], str(n)[0], sep="")
+
+print last two characters:
+str(n[-2:])
+
+characters 2-4
+str(n[1:5])
+
+Final item
+str(n[-1])
+	
+penulimate item
+str(n[-2])
+
+strip the last character from a string
+s[:-1]
+
+Remove \n or \r from a string
+s.rstrip('\r\n')

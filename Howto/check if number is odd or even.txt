@@ -1,0 +1,10 @@
+# Python program to check if the input number is odd or even.
+# A number is even if division by 2 gives a remainder of 0.
+
+def checkEvenNumber(N):
+    if (N % 2) == 0:
+        # even
+        return True
+    else:
+        # odd
+        return False
