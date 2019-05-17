@@ -1,0 +1,58 @@
+
+from datetime import date
+from datetime import datetime
+import calendar			# for last day of the month
+
+today=date.today()
+print(today)
+print(date.today().strftime('%Y%m%d'))
+today_y=date.today().strftime('%Y')
+today_m=date.today().strftime('%m')
+today_d=date.today().strftime('%d')
+
+extract=datetime.strptime('20191222', '%Y%m%d')
+print(extract)
+extract_y=extract.strftime('%Y')
+extract_m=extract.strftime('%m')
+extract_d=extract.strftime('%d')
+
+# if no day has been provided, set the day today for this month's extract, or the last day of the month
+if today_m == extract_m:
+        extract = extract.replace(day=int(today_d))     # or just return today
+        print(type(today_d))
+else:                                                   # return last day of the month
+        extract_d=calendar.monthrange(int(extract_y),int(extract_m))[1]
+        extract = extract.replace(day=int(extract_d))   # or just return today
+        #extract = extract.replace(day=int(today_d))calendar.monthrange(int(extract_y),int(extract_m))
+
+print(extract)
+
+
+-------------------
+
+sourceDir='./'
+ucds_dirs = [f for f in listdir(sourceDir) if os.path.isdir(join(sourceDir,f))]
+j = "".join(ucds_dirs)      # single string of files
+m = re.compile('201[89][0-9]{4}')
+
+dates_s = m.findall(j)  # list of string dates
+dates_d = []    # list of date object dates
+
+for s in dates_s:
+        dates_d.append(datetime.strptime(s, '%Y%m%d'))
+
+--
+Subtract a day from a date:
+from datetime import datetime, timedelta
+var_d - timedelta(days=1)
+
+# Parse a string containing a date
+# Example of below: helper.py
+m = re.compile('[0-9]{4}201[89]')
+s="abc_01012019_def"
+
+dates_s = m.findall(s)  # list of string dates only, where s is a string
+dates_d = []            # list of date object dates
+
+for s in dates_s:
+	dates_d.append(datetime.strptime(s, '%d%m%Y'))
