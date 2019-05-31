@@ -3,11 +3,11 @@ data = open('trash.txt').read()
 count = data.count('Bob')
 
 # count the number of occurrences in a list
-def word_count(str):
-    counts = dict()
-    words = str.split()
 
-    for word in words:
+def word_count(my_list):
+    counts = dict()
+    
+    for word in my_list:
         if word in counts:
             counts[word] += 1
         else:
@@ -15,7 +15,8 @@ def word_count(str):
 
     return counts
 
-print( word_count('the quick brown fox jumps over the lazy dog.'))
+# words = str.split() 	# create a list from a space separated string
+print(word_count('the quick brown fox jumps over the lazy dog.'))
 
 # => {'the': 2, 'jumps': 1, 'brown': 1, 'lazy': 1, 'fox': 1, 'over': 1, 'quick': 1, 'dog.': 1} 
 

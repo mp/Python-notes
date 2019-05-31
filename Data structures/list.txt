@@ -31,7 +31,7 @@ False
 >>> 3 in [3,5,2,4,1]
 True
 
-list.append()
+list.append() 	# from Python 3.7 items are preserved in the order they are appended or declared)
 list.insert(int position, value)
 list.sort()
 list.remove(item) OR del list[index]		
