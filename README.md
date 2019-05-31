@@ -1,4 +1,4 @@
-Libraries I have used.
+Libraries & Methods I have used.
 
 Regular expression
 ------------------
@@ -9,6 +9,7 @@ File system traversal
 os, os.path: isfile, isdir, join
 
 External programs
+-----------------
 subprocess
 
 Date time parsing for timeseries
@@ -19,3 +20,8 @@ datetime: datetime, timedelta
 Data structures (tag code)
 --------------------------
 for, while
+
+Methods
+-------
+Printing: format, round
+Files: writelines
