@@ -21,7 +21,11 @@ Data structures (tag code)
 --------------------------
 for, while
 
-Methods
--------
-Printing: format, round
-Files: writelines
+Printing numbers
+----------------
+format, round
+
+writing to files
+----------------
+Files: open, write, close
+

@@ -1,0 +1,38 @@
+# Tasks that have to wait for events to finish are use cases for threading
+
+# Daemon thread:
+# Program waits for regular threads to terminate, but will terminate if daemon tthreads (lower priorty threads) are running (example use: ping server to test live connection)
+# join():  blocks threads until another thread has terminated
+d.start()
+t.start()
+# runs in parallel
+
+d.start()
+d.join()
+t.start()
+t.join()
+# Runs sequentially. Not sure why it isn't called block() or wait() instead..https://stackoverflow.com/questions/50765460/why-is-join-method-called-join-in-the-threading-module 
+
+import logging
+import threading
+import time
+
+def thread_function(name):
+    logging.info("Thread %s: starting", name)
+    time.sleep(2)
+    logging.info("Thread %s: finishing", name)
+
+if __name__ == "__main__":
+    format = "%(asctime)s: %(message)s"
+    logging.basicConfig(format=format, level=logging.INFO,
+                        datefmt="%H:%M:%S")
+    logging.info("Main    : before creating thread")
+
+    # create the thread (pass it a function and its arguments, here int('1'))
+    x = threading.Thread(target=thread_function, args=(1,))
+    logging.info("Main    : before running thread")
+    # start the thread (runs for 2 seconds)
+    x.start()
+    logging.info("Main    : wait for the thread to finish")
+    # x.join()
+    logging.info("Main    : all done")

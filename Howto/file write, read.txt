@@ -38,3 +38,16 @@ def grep_letter(line):
       return True
   return False
 
+---
+import time
+
+def write_timestamp_to_file():
+    with open("/tmp/current_time.txt", "w") as f:
+        f.write("The time is now " + time.ctime())
+
+def run():
+    while True:
+        time.sleep(60)
+        write_timestamp_to_file()
+
+run()
