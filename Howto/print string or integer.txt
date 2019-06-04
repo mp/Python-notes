@@ -1,8 +1,7 @@
 print(n)				# print integer
 print("Hello,", name + "!")	 	# , adds a space
 print("Hello,", name, "!", sep="")	# removes space
-print("Hello," + name + str(a) + "!")	# best way, mixes integers and strings
-
+print("Hello," + name + str(a) + "!")	# mix integers and strings
 print("Hello %s" %name)			# %s for strings, %d for integers
 print("Hello %s %d %g" %(string, int, float)) # if there are multiple to print use a tuple
 

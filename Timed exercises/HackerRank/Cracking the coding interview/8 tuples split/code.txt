@@ -1,7 +1,7 @@
 if __name__ == '__main__':
 #    n = int(input())
 #    t = input().split()
-
+# alternate: tuple(map(int, raw_input().split(' ')))
     
 # print(t).integer_list()
 #    print(hash(t))

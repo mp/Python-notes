@@ -1,7 +1,15 @@
 # writing to a file
-file = open('myfile.txt','w') 	# (w)rite (clears file like >)
+file = open('myfile.txt','w+') # (w)rite (clears file like >)
 file.write('line 1\n') 		# write only takes a string, cast as str(int)
 file.write('line 2\n') 		# or do ('%d %g %s' %(int, float, string))
+file.close() 
+
+file = open('myfile.txt','w+') # (w)rite (clears file like >)
+lines = ['line1', 'line2']
+with open('filename.txt', 'w') as f:
+    f.write('\n'.join(lines))
+# alternative
+    f.writelines("%s\n" % l for l in lines)
 file.close() 
 
 # read whole file

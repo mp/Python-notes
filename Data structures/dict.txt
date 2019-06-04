@@ -1,5 +1,3 @@
-
-  
 phonebook = {'Chris':111 , 'Fred':222, 'Andrew':333}
 phonebook["Tammy"] = 333	# Add
 
