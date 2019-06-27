@@ -1,0 +1,18 @@
+import os.path
+from os.path import isfile, isdir, join	# use os.path.isdir instead of isdir
+from os import listdir
+
+sourceDir='./'
+files = [f for f in listdir(sourceDir) if isfile(join(sourceDir,f))]
+dirs = [f for f in listdir(sourceDir) if isdir(join(sourceDir,f))]
+
+
+Filtered:
+files = [f for f in listdir(sourceDir) if re.match(r'*.jpg',f)]
+
+
+Filtered glob glob way:
+
+import glob
+
+files = glob.glob(sourceDir+ "/" + '*.jpg')	# list of the full path

@@ -1,0 +1,25 @@
+# check if a file exists
+
+import os.path
+
+os.path.exists(file_path)	# returns True for files and directories
+
+# alternatively,
+os.path.isfile(file_path)	# returns True for files 
+
+
+# check if directory is empty
+import os.path
+
+if len(os.listdir('/path/directory')) == 0:
+	print("directory is empty")
+else
+	print("directory is not empty")
+
+#alternative:
+if not os.listdir('/path/directory'):
+
+	print("directory is empty")
+else
+	print("directory is not empty")
+	

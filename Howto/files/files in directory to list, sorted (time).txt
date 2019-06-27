@@ -1,0 +1,47 @@
+Try method four . five
+
+# method one
+
+import glob
+import os
+
+files = glob.glob("*")  # e.g. "*.txt"
+files.sort(key=os.path.getmtime)
+print(files)
+
+# method two with shell
+import commands
+a = commands.getstatusoutput("ls -tr")
+list = a[1].split('\n')
+print(list)
+
+# method three with glob
+import glob
+import os
+
+sourceDir = "./"
+os.chdir(sourceDir)
+files = filter(os.path.isfile, glob.glob(sourceDir + "*"))
+files.sort(key=os.path.getmtime)
+print(files)
+
+# method four with listdir
+import os
+sourceDir = "./"
+os.chdir(sourceDir)
+files = filter(os.path.isfile, os.listdir(sourceDir))
+# files = [os.path.join(sourceDir, f) for f in files] # adds folder path
+files.sort(key=os.path.getmtime)
+print(files)
+
+method four . five
+import os
+a = sorted(filter(os.path.isfile, os.listdir('.')), key=lambda p: os.stat(p).st_mtime)
+print(a)
+
+# method five, Python 3.5+
+from pathlib import Path
+sorted(Path('.').iterdir(), key=lamda f: f.stat().st_mtime)
+
+# method 6
+sorted(filter(os.path.isfile, os.listdir('.')), key=lamda p: os.stat(p).st_mtime)

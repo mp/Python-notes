@@ -1,0 +1,10 @@
+if len(os.listdir("/path/%s" %(key))) != 0:
+
+
+OR
+
+def dirIsNotEmpty(dir):
+        if len(os.listdir("/path/%s" %(dir))) != 0:
+                return True
+        else:
+                return False
