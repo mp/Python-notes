@@ -9,6 +9,9 @@ for i in range(3):
     if i == 1:
         break		# breaks the loop. 'continue' skips to the next element
 
+for idx, val in enumerate(myList):	# print index and value
+    print(idx, val)
+
 while.
 
 x = 1

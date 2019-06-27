@@ -17,6 +17,9 @@ list1.append(re.search(r'Hello', s).group())
 list1.append(re.search(r'Alex', s).group())
 list2.append(re.search(r'18', s).group())
 
+# findall: adds all matches in a string to a list
+re.findall(r'w', 'http://www.hackerrank.com/') # ['w','w','w']
+
 # Add matches to a dictionary
 d = {'capitals':[], 'numbers':[]}	
 d['capitals'].append(re.search(r'Hello', s).group())

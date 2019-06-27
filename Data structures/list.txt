@@ -33,7 +33,7 @@ True
 
 list.append() 	# from Python 3.7 items are preserved in the order they are appended or declared)
 list.insert(int position, value)
-list.sort()
+list.sort()	# sorts original list and returns none. More typical to use sorted (below).
 list.remove(item) OR del list[index]		
 list.reverse()		# modifies the original list and returns none, so cannot use inline.
 			# alternatively use mylist[::-1] to reverse a copy (more itensive)
@@ -71,7 +71,17 @@ product = reduce((lambda x, y: x * y), [1, 2, 3, 4])
 # Output: 24
 
 Unique (remove duplicates) requires converting it to a set
-mylist = list(sorted(set(mylist)))	# sorted is optional
+mylist = sorted(list(set(mylist)))	# Always use sorted outermost
 
 sort a list:
 sorted(myList)		# works on any interable
+
+Convert a list to a sentence, operate on each item, and print as string
+s = "Hello everyone in the world"
+l = s.split(' ') 	# create a list from a string
+
+# convert a list to a space separated string (reverse of previous)
+print(' '.join(l))
+
+# shorthand for running a method on each item
+print(' '.join(word.capitalise() for word in s)

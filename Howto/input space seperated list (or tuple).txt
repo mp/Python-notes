@@ -12,3 +12,10 @@ print(t)
 
 # convert every string in a list to an int
 l = [int(x) for x in l]
+
+# convert a space separated string to list
+s = "Hello everyone in the world"
+l = s.split(' ')	# create a list from a string
+
+# convert a list to a space separated string (reverse of previous)
+print(' '.join(l))

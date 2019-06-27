@@ -1,0 +1,14 @@
+# List files in a directory:
+from os import listdir
+from os.path import isfile, join
+
+mypath="/tmp/"
+lsall = listdir(mypath)
+onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+
+# absolute (full path) instead of relative path with join:
+import os
+lspwdall = [os.path.abspath(f) for f in os.listdir(mypath)]
+
+# check if file exists
+os.path.isfile('./file.txt')	# => True

@@ -13,3 +13,29 @@ for c in str(binary_number):
         counter = 0
 
 print(max)
+
+----
+
+# Print consecutive vowels
+# Requires a while loop as the for loop i counter cannot be changed
+
+v = "aeiou"
+v = v + v.upper()
+s = "rabcdeefgyYhFjkIoomnpOeorteeeeet"
+# => ee
+# => Ioo
+# => Oeo
+# => eeeee
+
+i = 0
+while i < len(s):
+    if s[i] in v:
+      if s[i+1] in v:
+        y = i
+        count = 0
+        while s[y] in v:
+          print(s[y],end="")
+          y +=1
+          i += 1
+        print()
+    i+=1

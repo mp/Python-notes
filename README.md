@@ -19,7 +19,7 @@ datetime: datetime, timedelta
 
 Data structures and keywords (tag code)
 ---------------------------------------
-list {file: list} {usecases: [create a numerical range with start end & step, search for element, append remove or insert in position, iterate (optional with index), minimum or maximum value, sort, filter numerical range, sum, method on each element]
+list {file: list} {usecases: [create a numerical range with start end & step, search for element, append remove or insert in position, iterate (optional with index), minimum or maximum value, sort, filter numerical range, sum, method on each element, string split to create a list, list joined to a string]
 tuple {files: /tuple/} {usecases: input space separated string to tuple}  
 dictionary {file: dict, count occurrences} {usecases: [look up a key's values or keys with same value, count occurrences of element, traverse a dict of lists, unique elements (set)}
 
