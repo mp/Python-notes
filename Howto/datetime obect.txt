@@ -4,6 +4,8 @@ from datetime import datetime
 import calendar			# for last day of the month
 
 today=date.today()
+date_in_30_days = str(datetime.date.today() + datetime.timedelta(+30)
+
 print(today)
 print(date.today().strftime('%Y%m%d'))
 today_y=date.today().strftime('%Y')
