@@ -1,0 +1,68 @@
+# Allows GET/POST requests for WebSDKs.
+import requests
+import json
+
+# import urllib3
+# urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+'''
+In this case, an initial request is needed to pass the ./Authorise file which contains the username and password in JSON.
+That request returns a Venafi API key from the the WebSDK which can be used for further requests.
+The requests are made: 1 for the API key, one for any certificates expiring within the range, and a last call for additional certificate details provided in the _links attribute
+
+The best approach for this is getting it working in bash with curl,
+e.g.
+APIKey=`curl -v --insecure -X POST --data @Authorize --header "Content-Type:application/json" https://${HOST}/vedsdk/Authorize/ 2>&1 | grep -i apikey | cut -d'"' -f4`
+curl -kv -X GET "https://${HOST}/vedsdk/certificates/?ValidToGreater=2019-10-20T00:00:00.0000000Z&ValidToLess=2019-10-31T00:00:00.0000000Z" -H "X-Venafi-Api-Key:${APIKey}")
+
+... and then port the bash code to Python using the requests library (https://stackoverflow.com/questions/25491090/how-to-use-python-to-execute-a-curl-command) and parsing JSON.
+
+The requests object that is returned can print the response in text or json.
+'''
+
+
+apikey_headers = {
+    'Content-Type': 'application/json',
+}
+
+apikey_data = open('Authorize')
+# apikey_response = requests.post('https://HOST/vedsdk/Authorize/', headers=apikey_headers, data=apikey_data, verify=False)
+apikey_response = requests.request("POST", 'https://HOST/vedsdk/Authorize/', headers=apikey_headers, data=apikey_data, verify=False)
+apikey_response_json=apikey_response.json()
+
+#print(apikey_response.text)
+APIKEY=apikey_response_json['APIKey']
+
+certificates_headers = {
+    'X-Venafi-Api-Key': APIKEY,
+}
+
+certificates_params = (
+    ('ValidToGreater', '2019-10-20T00:00:00.0000000Z'),
+    ('ValidToLess', '2019-10-31T00:00:00.0000000Z'),
+)
+
+certificates_response = requests.get('https://HOST/vedsdk/certificates/', headers=certificates_headers, params=certificates_params, verify=False)
+
+#print(certificates_response.text)
+certificates_response_json=certificates_response.json()
+
+certificates_list=certificates_response_json['Certificates']
+
+for cert in certificates_list:
+	NAME_DN_EXPIRY_LIST = [cert["Name"],cert["DN"]]
+	#print(cert["Name"],cert["DN"])
+
+	cert_details_url = 'https://HOST' + cert["_links"][0]['Details']
+
+	cert_details_headers = {
+	    'X-Venafi-Api-Key': APIKEY,
+	}
+	
+	cert_details_response = requests.get(cert_details_url, headers=cert_details_headers, verify=False)
+	cert_details_response_json=cert_details_response.json()
+	
+	#print(cert_details_response.text)
+	NAME_DN_EXPIRY_LIST.append(cert_details_response_json["CertificateDetails"]["ValidTo"])
+
+	print('\t'.join(NAME_DN_EXPIRY_LIST))

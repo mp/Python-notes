@@ -1,3 +1,5 @@
+spare time? Try and document "f strings" which are apparently a better way to print
+
 print(n)				# print integer
 print("Hello,", name + "!")	 	# , adds a space
 print("Hello,", name, "!", sep="")	# removes space
@@ -15,3 +17,7 @@ print('The cost is £%.2f' % (product_value))	# works on an integer or float
 
 int(round(x))				# round a float
 
+
+# Print items of a list separated by spaces
+l = ["a","b","c"]
+print(' '.join(l))
