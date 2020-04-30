@@ -1,21 +1,27 @@
-spare time? Try and document "f strings" which are apparently a better way to print
-
 print(n)				# print integer
 print("Hello,", name + "!")	 	# , adds a space
 print("Hello,", name, "!", sep="")	# removes space
 print("Hello," + name + str(a) + "!")	# mix integers and strings
-print("Hello %s" %name)			# %s for strings, %d for integers
-print("Hello %s %d %g" %(string, int, float)) # if there are multiple to print use a tuple
+
+print(f"Hello {name}")			# fstrings variables
+print("Hello %s" %name)			# <3.7: %s for strings, %d for integers (alternative to above)
+
+print(f"Hello {string} {int} {float}")		# fstrings multiple variables
+print("Hello %s %d %g" %(string, int, float)) 	# <3.7: tuple for multiple (alternative to above)
 
 years = int(input())
 product_value = float(input())		# a.k.a double
 
 # 2 decimal places (integer or float)
 product_value = 100.00
-print("%.2f" %(years))				# format returns a string to 2 decimal places (e.g. money)
-print('The cost is £%.2f' % (product_value))	# works on an integer or float
 
-int(round(x))				# round a float
+print(f"{years:.2f}")				# fstrings format returns a string to 2 decimal places (e.g. money)
+print("%.2f" %(years))				# <3.7: format returns a string to 2 decimal places (e.g. money) (alternative to above)
+
+print(f'The cost is £{product_value:.2f}')	# works on an integer or float
+print('The cost is £%.2f' % (product_value))	# <3.7: works on an integer or float (alternative to above)
+
+int(round(x))	# round a float
 
 
 # Print items of a list separated by spaces
