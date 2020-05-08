@@ -1,7 +1,14 @@
 create
 list(range(5))	# [0,1,2,3,4]
-
 list(range(1, 10, 2))	# start (1), end limit (10), step 2
+
+Retrieve a range
+l[:10]		# first 10 elements
+l[0:2]		# index 0 to index 2-1=1, i.e. start at index 0 (item 1), and the object at index 2 is not included (index 1)
+l[0:10]		# index 0 to index 10-1=9. Start at index 0 (item 1), and the object at index 10 is not included (index 9)
+l[-1]		# last element
+l[-2]		# second to last element
+l[-10:]		# last 10 elements
 
 repeat
 [0] * 5 	# [0,0,0,0,0]

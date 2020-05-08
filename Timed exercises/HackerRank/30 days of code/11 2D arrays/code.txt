@@ -1,0 +1,79 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+if __name__ == '__main__':
+    arr = []
+
+    for _ in range(6):
+        arr.append(list(map(int, input().rstrip().split())))    
+
+    '''
+    print(arr[0][0:3], arr[1][1], arr[2][0:3])
+    print(arr[0][1:4], arr[1][2], arr[2][0:3])
+    print(arr[0][2:5],  arr[1][3] , arr[2][0:3])
+    print(arr[0][3:6], arr[1][4] , arr[2][0:3])
+    '''
+
+    sum_arr1=sum(arr[0][0:3]) + arr[1][1] + sum(arr[2][0:3])
+    sum_arr2=sum(arr[0][1:4]) + arr[1][2] + sum(arr[2][1:4])
+    sum_arr3=sum(arr[0][2:5]) + arr[1][3] + sum(arr[2][2:5])
+    sum_arr4=sum(arr[0][3:6]) + arr[1][4] + sum(arr[2][3:6])
+    
+    sum_arr5=sum(arr[1][0:3]) + arr[2][1] + sum(arr[3][0:3])
+    sum_arr6=sum(arr[1][1:4]) + arr[2][2] + sum(arr[3][1:4])
+    sum_arr7=sum(arr[1][2:5]) + arr[2][3] + sum(arr[3][2:5])
+    sum_arr8=sum(arr[1][3:6]) + arr[2][4] + sum(arr[3][3:6])
+
+    sum_arr9=sum(arr[2][0:3]) + arr[3][1] + sum(arr[4][0:3])
+    sum_arr10=sum(arr[2][1:4]) + arr[3][2] + sum(arr[4][1:4])
+    sum_arr11=sum(arr[2][2:5]) + arr[3][3] + sum(arr[4][2:5])
+    sum_arr12=sum(arr[2][3:6]) + arr[3][4] + sum(arr[4][3:6])
+
+    sum_arr13=sum(arr[3][0:3]) + arr[4][1] + sum(arr[5][0:3])
+    sum_arr14=sum(arr[3][1:4]) + arr[4][2] + sum(arr[5][1:4])
+    sum_arr15=sum(arr[3][2:5]) + arr[4][3] + sum(arr[5][2:5])
+    sum_arr16=sum(arr[3][3:6]) + arr[4][4] + sum(arr[5][3:6])
+
+    max_all_hourglasses = max([sum_arr1, sum_arr2, sum_arr3, sum_arr4, sum_arr5, sum_arr6, sum_arr7, sum_arr8, sum_arr9, sum_arr10, sum_arr11, sum_arr12, sum_arr13, sum_arr14, sum_arr15, sum_arr16])
+
+    print(max_all_hourglasses)
+    
+    '''
+    arr1=[arr[1](1-3) + arr2[2](2)]
+    arr2=[arr[1](2-4) + arr2[2](3)]
+    arr3=[arr[1](3-5) + arr2[2](4)]
+    arr4=[arr[1](4-6) + arr2[2](5)]
+
+    arr1=[arr[2](1-3) + arr2[3](2)]
+    arr2=[arr[2](2-4) + arr2[3](3)]
+    arr3=[arr[2](3-5) + arr2[3](4)]
+    arr4=[arr[2](4-6) + arr2[3](5)]
+
+    arr1=[arr[3](1-3) + arr2[4](2)]
+    arr2=[arr[3](2-4) + arr2[4](3)]
+    arr3=[arr[3](3-5) + arr2[4](4)]
+    arr4=[arr[3](4-6) + arr2[4](5)]
+
+    arr1=[arr[4](1-3) + arr2[5](2)]
+    arr2=[arr[4](2-4) + arr2[5](3)]
+    arr3=[arr[4](3-5) + arr2[5](4)]
+    arr4=[arr[4](4-6) + arr2[5](5)]
+
+    arr5=[arr[2](2-4) + arr2[2](3)]
+    arr6=[arr[2](2-4) + arr2[2](3)]
+    arr7=[arr[2](2-4) + arr2[2](3)]
+    arr8=[arr[2](2-4) + arr2[2](3)]
+    arr9=[arr[1](2-4) + arr2[2](3)]
+    arr10=[arr[1](2-4) + arr2[2](3)]
+    arr11=[arr[1](2-4) + arr2[2](3)]
+    arr12=[arr[1](2-4) + arr2[2](3)]
+    arr13=[arr[1](2-4) + arr2[2](3)]
+    arr14=[arr[1](2-4) + arr2[2](3)]
+    arr15=[arr[1](2-4) + arr2[2](3)]
+    arr16=[arr[1](2-4) + arr2[2](3)]
+    '''
