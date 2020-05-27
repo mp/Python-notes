@@ -1,0 +1,17 @@
+# concurrent.futures library: run a function in mutiple threads
+# Introduces process based parallelisation built-in to Python 3.2+
+# Updated from: https://tutorialedge.net/python/concurrency/python-threadpoolexecutor-tutorial
+# See also: https://docs.python.org/3/library/concurrent.futures.html
+
+from concurrent.futures import ThreadPoolExecutor
+
+def task(n):
+ print(f"Processing {n}")
+
+
+print("Starting ThreadPoolExecutor")
+with ThreadPoolExecutor(max_workers=3) as executor:
+  future = executor.submit(task, (1))
+  future = executor.submit(task, (2))
+  future = executor.submit(task, (3))
+  print("Where does this print?")

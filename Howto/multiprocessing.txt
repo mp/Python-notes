@@ -1,0 +1,31 @@
+# multiprocessing library: run a function in mutiple processes.
+# Introduces process based parallelisation built-in to Python
+# updated from: https://www.blog.pythonlibrary.org/2016/08/02/python-201-a-multiprocessing-tutorial
+
+# Run a function (doubler: multiplies a number by two) in separate processes over multiple CPUs
+
+import os
+from multiprocessing import Process
+
+def doubler(number):
+    """
+    A doubling function that can be used by a process
+    """
+    result = 2 * number
+    proc = os.getpid()
+    print(f"{number} doubled to {result} by process id: {proc}")
+
+if __name__ == '__main__':
+    numbers = [5, 10, 15, 20, 25]
+    procs = []
+    
+    for index, number in enumerate(numbers):
+        proc = Process(target=doubler, args=(number,))
+        procs.append(proc)
+        proc.start()
+    for proc in procs:
+        proc.join()   # wait for the process to terminate
+
+# see also:
+# multi-threading: run a function in multiple threads of a single process (preferred)
+# Creating a process can consume time and even exhaust the system resources. However creating threads is economical as threads (threads are often called light weight processes). Threads can share memory, and be stopped temporarily.
