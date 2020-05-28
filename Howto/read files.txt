@@ -1,0 +1,24 @@
+file = '/path/file.txt'
+with open(file) as fp:
+   for c, line in enumerate(fp):		# set counter and line. Note that line is a tuple with 
+       print(f"Line {c}: {line}")		# fstring printing
+
+
+Example:
+from collections import defaultdict
+
+d_host_values = defaultdict(list)
+
+def print_file(filepath):
+        with open(filepath) as fp:
+                for line in enumerate(fp):
+                        host = line[1].split(',')[0].strip('\n')
+                        value = line[1].split(',')[1].strip('\n')
+                        # d_host_values[host] = value   	# Only adds the latest
+                        d_host_values[host].append(value)       # defaultdict
+
+        for host in d_host_values:
+                values = ','.join(d_host_values[host])
+                print(host + "," + values)      # print host and values
+
+print_file("host_values.csv")
