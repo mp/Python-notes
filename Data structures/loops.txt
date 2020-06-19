@@ -1,7 +1,7 @@
 for.
 
-for i in range(1, 3):		# start at 1 (default 0), ends at 2, no skip
-    print ("We're on time %d" % x)
+  for i in range(1, 3):		# start at 1 (default 0), ends at 2, no skip
+    print (f"We're on time {i}")
 
 
 for i in range(3):
@@ -12,9 +12,13 @@ for i in range(3):
 for idx, val in enumerate(myList):	# print index and value
     print(idx, val)
 
+letters = ["a", "b", "c"]
+	for x in letters:
+		print(x)
+
 while.
 
-x = 1
+n = 1
 while True:
-    print("To infinity and beyond! We're getting close, on %d now!" % x)
-    x += 1
+    print(f"To infinity and beyond! We're getting close, on {n} now!")
+    n += 1
