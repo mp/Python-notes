@@ -22,7 +22,7 @@ for i in range(len(nums)):
 	# print every element
 	print(nums[i])
 
-search = "V"
+search = "v"
 list = ["a", "b", "v"]
 
 in / not in operators
@@ -83,7 +83,7 @@ mylist = sorted(list(set(mylist)))	# Always use sorted outermost
 sort a list:
 sorted(myList)		# works on any interable
 
-Convert a list to a sentence, operate on each item, and print as string
+Convert a sentence to a list
 s = "Hello everyone in the world"
 l = s.split(' ') 	# create a list from a string
 
