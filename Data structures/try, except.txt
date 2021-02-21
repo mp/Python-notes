@@ -1,0 +1,21 @@
+try:
+  f = open('no_file', r)
+  for l in f:
+    print("l")
+except:
+    print("something went wrong")
+    
+    
+Another example.
+try:
+        print(x)        # x is not defined
+except NameError:	# named error
+        print("NameError")
+except:                 # any error
+        ("Error")
+# else:			# optional
+#       ("Nothing went wrong")
+
+# finally:		# optional
+#       f.close()
+                        # runs at end of try..except
