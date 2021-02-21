@@ -2,4 +2,4 @@
 
 number_list = [45, 34, 10, 36, 12, 6, 80]
 average = sum(number_list)/len(number_list)
-print("The average is ", round(avg,2))
+print(f"The average is {round(average,2)}")
