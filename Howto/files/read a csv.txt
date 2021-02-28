@@ -1,0 +1,17 @@
+# example.csv
+# a1,b1,c1
+# a2,b2,c2
+
+import csv
+
+filename = 'example.csv'
+
+with open(filename, 'r') as csvfile:
+    reader = csv.reader(csvfile)
+    for row in reader:
+        print(row)    # Each row is a list, e.g. [a1, b1, c1]
+        print(row[0]) # a1
+
+
+# changing delimiter (e.g. space or pipe): https://docs.python.org/3/library/csv.html
+# example without importing a library: https://koalatea.io/python-read-csv/
