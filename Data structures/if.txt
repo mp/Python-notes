@@ -3,7 +3,8 @@ def checkRange100to1000(N):
     if 100 <= N <= 1000:
         return True
 
-
+if checkEvenNumber(N) and (2 <= N <= 5) or (N > 20):
+	return True
 
 if expression1:
    statement(s)
