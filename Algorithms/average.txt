@@ -2,4 +2,10 @@
 
 number_list = [45, 34, 10, 36, 12, 6, 80]
 average = sum(number_list)/len(number_list)
-print(f"The average is {round(average,2)}")
+print(f"The average rounded up or down is {round(average,2)}")
+
+int(n)		# drop the decimal part for a whole number, e.g. int(1.6) => 1
+		# To drop the decimal altogether use int(1.6), not round
+		# N.B. For negative numbers use floor, https://stackoverflow.com/a/43661374
+
+round(n)	# round a float up or down to nearest number, e.g. round(1.6) => 2

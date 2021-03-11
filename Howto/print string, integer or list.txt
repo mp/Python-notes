@@ -21,7 +21,10 @@ print("%.2f" %(years))				# <3.7: format returns a string to 2 decimal places (e
 print(f'The cost is £{product_value:.2f}')	# works on an integer or float
 print('The cost is £%.2f' % (product_value))	# <3.7: works on an integer or float (alternative to above)
 
-int(round(x))	# round a float
+int(n)		# drop the decimal part, e.g. int(1.6) => 1
+		# N.B. For negative numbers use floor(n), https://stackoverflow.com/a/43661374
+
+round(n)	# round a float up or down to the nearest whole number, e.g. round(1.6) => 2
 
 
 # Print items of a list separated by spaces
