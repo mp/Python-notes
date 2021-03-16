@@ -18,7 +18,9 @@ letters = ["a", "b", "c"]
 
 while.
 
-n = 1
-while True:
-    print(f"To infinity and beyond! We're getting close, on {n} now!")
-    n += 1
+idx=0              # index position 0 of a 5 length list
+lenl=5             # length of a list is 5
+
+while idx < lenl:  # print 0..4, i.e. all 5 items
+    print(idx)
+    idx=idx+1
