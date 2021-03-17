@@ -1,0 +1,17 @@
+# example.txt
+# line 1
+# line 2
+
+# save as a list removing '\n' on each line
+file = open("./example.txt")        # split and remove \n: ['line 1', 'line 2']
+lines = file.read().split('\n')     # split returns a list. Alternative: lines = file.read().splitlines()
+file.close()                        # (splitlines removes all whitespace)
+print(lines)                        # ['line 1', 'line 2']
+print('\n'.join(lines))             # prints file line by line
+
+# save as a list keeping '\n' on each line
+file = open("./example.txt")        # Keep \n: ['line 1\n', 'line 2\n']
+lines = list(file)
+file.close()
+print(lines)                        # ['line 1\n', 'line 2\n']
+print('\n'.join(lines.strip('\n'))) # print file line by line, removing '\n'
