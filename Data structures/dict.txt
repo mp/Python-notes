@@ -1,4 +1,4 @@
-phonebook = {'Chris':111 , 'Fred':222, 'Andrew':333}
+phonebook = {'Chris':111 , 'Fred':222, 'Freddy':222 'Andrew':333}
 phonebook["Tammy"] = 333	# Add
 
 #print(phonebook['Chris'])
@@ -13,7 +13,8 @@ if 'Chris' in phonebook:        # works for key search only
 for key in phonebook:
   print(key, phonebook[key])	# print whole phonebook
 
-print(list(phonebook.keys())[list(phonebook.values()).index(222)]) # Prints 'Fred'
+print(list(phonebook.keys())[list(phonebook.values()).index(222)]) # Prints first match only, 'Fred'
+								   # Alternative:/multiple keys/ (below)
 
 ---
 phonebook = {'Chris':111 , 'Fred':222, 'Andrew':333, "Tammy":222}
