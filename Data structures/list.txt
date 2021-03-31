@@ -14,6 +14,9 @@ repeat
 [0] * 5 	# [0,0,0,0,0]
 [1,2,3] * 2	# [1,2,3,1,2,3]
 
+copy
+l2 = l.copy()	# Otherwise l=l2 points to l
+
 for e in nums:
   		# print every element
 	print(e)
@@ -38,6 +41,9 @@ False
 >>> 3 in [3,5,2,4,1]
 True
 
+Reduce a list containing lists:			# myList = [[1, 2], [3], [4, 5]]
+myList_flat = [j for i in myList for j in i] 	# myList_flat [1, 2, 3, 4, 5]
+						
 list.append() 	# from Python 3.7 items are preserved in the order they are appended or declared)
 list.insert(int position, value)
 list.sort()	# sorts original list and returns none. More typical to use sorted (below).
@@ -63,6 +69,15 @@ number_list = range(-5, 5)
 less_than_zero = list(filter(lambda x: x < 0, number_list))
 print(less_than_zero)
 
+Count frequency:
+l.count("a")	# [a,a,b,c] => 2
+
+Item with maximum frequency (a dict of frequencies):
+d={}
+for i in l:
+	d[i]=a.count(i)  # [a:2, b:1, c:1] 
+
+max_frequency=max(arrDict.values())	# 2
 
 Reduce (rolling sum on list)
 product = 1
