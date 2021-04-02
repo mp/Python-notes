@@ -1,0 +1,17 @@
+# argparse is better than sys or getops: https://www.datacamp.com/community/tutorials/argument-parsing-in-python
+
+import argparse
+
+# Construct the argument parser
+ap = argparse.ArgumentParser()
+
+# Add the arguments to the parser
+ap.add_argument("-a", "--foperand", required=True, help="first operand")
+ap.add_argument("-b", "--soperand", required=False, help="second operand")
+ap.add_argument("-c", "--toperand", required=False, help="third operand", action "store_true")	# no argument required
+args = vars(ap.parse_args())
+
+# Calculate the sum
+# print("Sum is {}".format(int(args['foperand']) + int(args['soperand'])))
+# print(args['foperand'])	# out.exe -a 10  	# 10
+print(args['toperand'])		# out.exe -a 10 -c	# True
