@@ -1,0 +1,2 @@
+https://zetcode.com/python/smtplib/
+https://realpython.com/python-send-email/#sending-a-plain-text-email
