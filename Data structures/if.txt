@@ -15,3 +15,10 @@ elif expression3:
 else:
    statement(s)
 
+On one line:
+fruit = 'Date'
+isDate = True if fruit == 'Date' else False	 # isDate => True
+
+Alternative:
+True if fruit == 'Date' else False		# True
+print('Yes') if fruit == 'Date' else False	# Yes'
