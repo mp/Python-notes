@@ -3,6 +3,12 @@
 # subprocess.run (not documented) for is preferred way, but if it is not available use Popen
 
 completed = subprocess.Popen('ls -l /tmp/', shell=True)
+
+# Alternative with variables and single quotes
+# cmd string has to be created first. N.B. spaces
+cmd = 'ls -l ' + my_folder + ' | awk \'{print $2}\''
+completed = subprocess.Popen(cmd, shell=True)
+
 print(completed)
 
 # save output to string
