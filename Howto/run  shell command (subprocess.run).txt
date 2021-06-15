@@ -1,15 +1,21 @@
 ### 4 ways to run a shell command. Shell is not recommended (preferred order).
 ### (CAM Perl lecturer said use shell = true in Python so you can just put the whole command as in Bash.)
-# subprocess.run (not documented) for is preferred way, but if it is not available use Popen
+# subprocess.run is only in 3.7+. run waits for the command to finish.
 
-completed = subprocess.Popen('ls -l /tmp/', shell=True)
+# https://stackoverflow.com/a/64680708: how to hide output, capture stdout or stderr
+import subprocess
+ls = subprocess.run('ls -l /tmp/', shell=True, capture_output=True, text=True).stdout.strip("\n")
+print(ls)			# string
+return ls.splitlines()		# list
 
 # Alternative with variables and single quotes
 # cmd string has to be created first. N.B. spaces
 cmd = 'ls -l ' + my_folder + ' | awk \'{print $2}\''
-completed = subprocess.Popen(cmd, shell=True)
+ls = subprocess.run(cmd, shell=True, capture_output=True, text=True).stdout.strip("\n")
 
-print(completed)
+# 2.7: Popen executes in the background (also works in 3+)
+ls = subprocess.Popen('ls -l /tmp/', shell=True)
+print(ls)
 
 # save output to string
 dir = subprocess.Popen("ls %s/%s | grep -Eo '201[78][0-9]{4}' | sort -r | head -n1" %(TMPDIR,SOURCEDIR), shell=True, stdout=subprocess.PIPE).communicate()[0].decode('utf-8')[:-1]  # alternatively, .rstrip('\r\n')
