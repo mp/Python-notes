@@ -2,31 +2,34 @@ Use if..else, or a dictionary mapping which can return an object, or execute a f
 
 # Return a string
 def numbers_to_strings(argument):
-    switcher = {
-        0: "zero",
-        1: "one",
-        2: "two",
-    }
-    return switcher.get(argument, "nothing")	# default:"nothing"
+	switcher = {
+		0: "zero",
+		1: "one",
+		2: "two",
+	}
+	return switcher.get(argument, "nothing")	# default:"nothing"
 
 
 # Run a function or lambda
 def zero():
-    return "zero"
+	return "zero"
 
 def one():
-    return "one"
+	return "one"
 
 def numbers_to_functions_to_strings(argument):
-    switcher = {
-        0: zero,
-        1: one,
-        2: lambda: "two",
-    }
-    # Get the function from switcher dictionary
-    func = switcher.get(argument, lambda: "nothing")
-    # Execute the function
-    return func()
+	switcher = {
+		0: zero,
+		1: one,
+		2: lambda: "two",
+	}
 
-https://www.pydanny.com/why-doesnt-python-have-switch-case.html
+	# Get the function from switcher dictionary
+	func = switcher.get(argument, lambda: "nothing")
+	# Execute the function
+	return func()
+
+numbers_to_functions_to_strings(argument)
+
+# https://www.pydanny.com/why-doesnt-python-have-switch-case.html
 
