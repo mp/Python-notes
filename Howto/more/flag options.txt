@@ -17,4 +17,5 @@ args = vars(ap.parse_args())
 # Calculate the sum
 # print("Sum is {}".format(int(args['foperand']) + int(args['soperand'])))
 # print(args['foperand'])	# args.py -a 10  	# 10
+				# alternate: args.py --foperand 10
 print(args['toperand'])		# args.py -a 10 -c	# True
