@@ -19,3 +19,37 @@ args = vars(ap.parse_args())
 # print(args['foperand'])	# args.py -a 10  	# 10
 				# alternate: args.py --foperand 10
 print(args['toperand'])		# args.py -a 10 -c	# True
+
+
+--- Using flag options with case.txt ---
+
+ap = argparse.ArgumentParser()
+
+# Add the arguments to the parser
+# -h is already used by --help
+# foperand is the long alternate as well as the key name
+ap.add_argument("-s", "--host", required=True, help="Hostname")
+ap.add_argument("-p", "--phase", required=False, help="Phase to run")
+
+args = vars(ap.parse_args())
+# print(args['host']) 
+# print(args['phase']) 
+
+def phase_one():
+	print("Running phase 1")
+
+def phase_two():
+	print("Running phase 2")
+
+def numbers_to_functions_to_strings(argument):
+	switcher = {
+		1: phase_one,
+		2: phase_two
+	}
+
+	# Get the function from switcher dictionary
+	func = switcher.get(argument, lambda: "nothing")
+	# Execute the function
+	func()
+
+numbers_to_functions_to_strings(int(args['phase']))

@@ -1,35 +1,24 @@
 Use if..else, or a dictionary mapping which can return an object, or execute a function.
 
-# Return a string
-def numbers_to_strings(argument):
-	switcher = {
-		0: "zero",
-		1: "one",
-		2: "two",
-	}
-	return switcher.get(argument, "nothing")	# default:"nothing"
+# Working example in "flag options.txt"
+# Below has been altered from: https://www.pydanny.com/why-doesnt-python-have-switch-case.html
 
+def phase_one():
+	print("Running phase 1")
 
-# Run a function or lambda
-def zero():
-	return "zero"
-
-def one():
-	return "one"
+def phase_two():
+	print("Running phase 2")
 
 def numbers_to_functions_to_strings(argument):
 	switcher = {
-		0: zero,
-		1: one,
-		2: lambda: "two",
+		1: phase_one,
+		2: phase_two
 	}
 
 	# Get the function from switcher dictionary
 	func = switcher.get(argument, lambda: "nothing")
 	# Execute the function
-	return func()
+	func()
 
-numbers_to_functions_to_strings(argument)
-
-# https://www.pydanny.com/why-doesnt-python-have-switch-case.html
-
+numbers_to_functions_to_strings(int(1))
+numbers_to_functions_to_strings(int(2))
