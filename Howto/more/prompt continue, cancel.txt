@@ -1,0 +1,11 @@
+import time
+import sys
+
+while True:
+	try:
+		print("Will reboot in 10 seconds. Pres Ctrl-C to abort")
+		time.sleep(10)
+		break	# otherwise, it will re-print the message repeatedly
+	except KeyboardInterrupt:
+		print("\nCancelled by user.")
+		sys.exit
