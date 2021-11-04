@@ -10,7 +10,7 @@ ap = argparse.ArgumentParser()
 # foperand is the long alternate as well as the key name
 ap.add_argument("-a", "--foperand", required=True, help="first operand")
 ap.add_argument("-b", "--soperand", required=False, help="second operand")
-ap.add_argument("-c", "--toperand", required=False, help="third operand", action "store_true")	# no argument required
+ap.add_argument("-c", "--toperand", required=False, help="third operand", action="store_true") # no argument to flag is required
 
 args = vars(ap.parse_args())
 
