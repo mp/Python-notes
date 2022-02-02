@@ -12,3 +12,6 @@ lspwdall = [os.path.abspath(f) for f in os.listdir(mypath)]
 
 # check if file exists
 os.path.isfile('./file.txt')	# => True
+
+# retrieve latest subdirectory
+See: last modified directory.txt

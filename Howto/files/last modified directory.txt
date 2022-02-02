@@ -1,5 +1,11 @@
 import os; import glob
 latest = max(glob.glob(os.path.join("/", '*/')), key=os.path.getmtime)
 print(latest)
-
 # sorted(glob.glob(os.path.join("/", '*/')), key=os.path.getmtime)[-n]	#nth latest
+
+# Alternative with absolute path:
+import os
+def latest_subdir(directory):
+	subdirs = [os.path.join(directory, file) for file in os.listdir(directory)]
+	last_subdir = max(subdirs, key=os.path.getmtime)
+	return last_subdir
