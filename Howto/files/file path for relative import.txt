@@ -1,0 +1,8 @@
+# import a sub-directory of modules
+
+import os
+# Look up the path of this file
+pwd = os.path.dirname(os.path.realpath(__file__))
+
+import sys
+sys.path.append(f"{pwd}/modules/")
