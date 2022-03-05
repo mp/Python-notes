@@ -1,0 +1,10 @@
+Use enum for a tri-state boolean: 
+
+from enum import Flag
+
+class Boolean(Flag):
+    TRUE = True
+    FALSE = False
+    EMPTY = None	# e.g. it cannot be evaluated
+
+https://stackoverflow.com/questions/31509401/python-enum-for-boolean-variable
